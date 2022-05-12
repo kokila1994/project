@@ -1,0 +1,32 @@
+<div class="mainpage">
+
+    <label for="Name">Enter name:</label>
+    <input type="text" [(ngModel)]="username">
+    <button class="click" (click)="getUsername($event)">Add name</button>
+    <label style="margin-left:30px;">Entered name here:</label>
+
+    <h3 *ngIf="isUser" class="Nameout">
+      <p style="text-decoration: underline; margin-left:500px ;" >{{uname}}</p> 
+    </h3>
+  
+
+
+    <br><br><br>
+
+     <input type="text" placeholder="Enter ice cream menu"  [(ngModel)]="MenuNames" >
+    <button (click)="getMenuName()" style="margin-left:50px;">Add menu</button>
+    <!-- <button  (click)="remove()" style="margin-left:30px;">Remove menu</button> -->
+   
+    <!-- <h3 style="margin-left:auto;float:right;font-size:25px;">List of Items:</h3> -->
+    <div *ngFor="let items of newarray; let i=index">
+      <h3 style="margin-left:675px;">
+        {{i+1}}.&nbsp;&nbsp;{{items}} <button  (click)="remove(i)">Remove</button>
+    </h3>  
+    </div>
+  </div>
+  
+
+  <router-outlet></router-outlet>
+
+
+
